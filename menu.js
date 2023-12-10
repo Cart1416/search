@@ -35,7 +35,7 @@ function showversion() {
     alert(version);
 }
 
-function runcode() {
+function runjscode() {
     eval(prompt("js to execute:"));
 }
 
@@ -64,7 +64,7 @@ function processCommand(command) {
       showversion();
       break;
     case "runcode":
-      runcode();
+      runjscode();
       break;
     // Add more cases for additional commands
     default:
