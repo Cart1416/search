@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 8";
+var version = "alpha 9";
 
 var keepRunning = true;
 
@@ -12,6 +12,7 @@ runcode: "Run some javascript code",
 cartgames: "Open Cart's Games",
 editmode: "Make text on this page editable",
 googlecache: "See a cached version of a site",
+SpontaneousC: "Open SpontaneousC",
 // Add more secret commands as needed
 };
 
@@ -47,7 +48,7 @@ function runjscode() {
 }
 
 function runcartgames() {
-    window.location("https://cg.pythonanywhere.com/")
+    window.location.href("https://cg.pythonanywhere.com/")
     keepRunning = false;
 }
 
@@ -62,6 +63,11 @@ function runeditmode() {
 
 function rungooglecache() {
   var val = prompt("Enter the webpage you want to see:", "");location = "http://webcache.googleusercontent.com/search?q=cache:" + escape(val)
+}
+
+function runSpontaneousC() {
+  window.location.href("https://sites.google.com/stjosephmaumee.org/spontaneousc/")
+  keepRunning = false;
 }
 
 function menu() {
@@ -102,6 +108,9 @@ function processCommand(command) {
       break;
     case "googlecache":
       rungooglecache();
+      break;
+    case "spontaneousc":
+      runSpontaneousC();
       break;
     // Add more cases for additional commands
     default:
