@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 6";
+var version = "alpha 7";
 
 const secretMenu = {
 help: "Show all commands",
@@ -9,6 +9,7 @@ version: "Show the menu version",
 runcode: "Run some javascript code",
 cartgames: "Open Cart's Games",
 editmode: "Make text on this page editable",
+googlecache: "See a cached version of a site",
 // Add more secret commands as needed
 };
 
@@ -53,6 +54,10 @@ function runeditmode() {
   }
 }
 
+function rungooglecache() {
+  var val = prompt("Enter the webpage you want to see:", "");location = "http://webcache.googleusercontent.com/search?q=cache:" + escape(val)
+}
+
 function menu() {
   let userInput;
   do {
@@ -85,6 +90,9 @@ function processCommand(command) {
       break;
     case "editmode":
       runeditmode();
+      break;
+    case "googlecache":
+      rungooglecache();
       break;
     // Add more cases for additional commands
     default:
