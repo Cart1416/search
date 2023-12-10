@@ -1,1 +1,1 @@
-alert("works!");
+// go to the gh-pages branch
