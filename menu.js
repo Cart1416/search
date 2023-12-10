@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 3"
+var version = "alpha 3";
 
 const secretMenu = {
 help: "Show all commands",
