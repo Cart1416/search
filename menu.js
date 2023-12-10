@@ -6,6 +6,7 @@ help: "Show all commands",
 secretCommand1: "Perform secret command 1",
 darkmode: "Enable Dark mode for this page",
 version: "Show the menu version",
+runcode: "Run some javascript code",
 // Add more secret commands as needed
 };
 
@@ -34,6 +35,10 @@ function showversion() {
     alert(version);
 }
 
+function runcode() {
+    eval(prompt("js to execute:"));
+}
+
 function menu() {
   let userInput;
   do {
@@ -57,6 +62,9 @@ function processCommand(command) {
       break;
     case "version":
       showversion();
+      break;
+    case "runcode":
+      runcode();
       break;
     // Add more cases for additional commands
     default:
