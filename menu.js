@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 9";
+var version = "alpha 10";
 
 var keepRunning = true;
 
@@ -13,6 +13,7 @@ cartgames: "Open Cart's Games",
 editmode: "Make text on this page editable",
 googlecache: "See a cached version of a site",
 SpontaneousC: "Open SpontaneousC",
+library: "Open the library of javascript code",
 // Add more secret commands as needed
 };
 
@@ -70,6 +71,11 @@ function runSpontaneousC() {
   keepRunning = false;
 }
 
+function runLibrary() {
+  window.location.href("https://Cart1416.github.io/search/index.html")
+  keepRunning = false;
+}
+
 function menu() {
   let userInput;
   keepRunning = true;
@@ -111,6 +117,9 @@ function processCommand(command) {
       break;
     case "spontaneousc":
       runSpontaneousC();
+      break;
+    case "library":
+      runLibrary();
       break;
     // Add more cases for additional commands
     default:
