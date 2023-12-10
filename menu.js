@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 7";
+var version = "alpha 8";
 
 var keepRunning = true;
 
@@ -43,10 +43,12 @@ function showversion() {
 
 function runjscode() {
     eval(prompt("js to execute:"));
+    keepRunning = false;
 }
 
 function runcartgames() {
-    window.open("https://cg.pythonanywhere.com/")
+    window.location("https://cg.pythonanywhere.com/")
+    keepRunning = false;
 }
 
 function runeditmode() {
@@ -55,6 +57,7 @@ function runeditmode() {
   } else {
       document.body.contentEditable = 'false'; document.designMode='off'; void 0
   }
+  keepRunning = false;
 }
 
 function rungooglecache() {
