@@ -45,7 +45,7 @@ function performSecretCommand1() {
   alert("Executing secret command 1...");
 }
 
-function darkmode() {
+function secretCommand2() {
     document.body.style.backgroundColor = 'black';
     document.body.style.color = 'white';
     document.querySelector('p').style.color = '#b3b3b3';
