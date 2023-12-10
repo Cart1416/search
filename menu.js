@@ -1,15 +1,18 @@
 /// execute_script.js
+var version = "alpha 3"
+
 const secretMenu = {
 help: "Show all commands",
 secretCommand1: "Perform secret command 1",
 darkmode: "Enable Dark mode for this page",
+version: "Show the menu version",
 // Add more secret commands as needed
 };
 
 function menu() {
   let userInput;
   do {
-    userInput = prompt("Enter a command (Type 'help' for a list of commands):");
+    userInput = prompt("Cart's Hacking Menu>");
     if (userInput) {
       processCommand(userInput);
     }
@@ -26,6 +29,9 @@ function processCommand(command) {
       break;
     case "darkmode":
       secretCommand2();
+      break;
+    case "version":
+      version();
       break;
     // Add more cases for additional commands
     default:
@@ -53,6 +59,11 @@ function secretCommand2() {
     document.querySelector('h1').style.color = '#ffcc66';
     alert("Dark Mode successful");
 }
+
+function version() {
+    alert(version);
+}
+
 window.addEventListener("keyup", event => {
     if (event.ctrlKey && event.which === 192) {
         menu();
