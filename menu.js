@@ -9,6 +9,31 @@ version: "Show the menu version",
 // Add more secret commands as needed
 };
 
+function showHelp() {
+  let helpMessage = "Available Commands:\n";
+  for (const key in secretMenu) {
+    helpMessage += `${key}: ${secretMenu[key]}\n`;
+  }
+  alert(helpMessage);
+}
+
+function performSecretCommand1() {
+  alert("Executing secret command 1...");
+}
+
+function secretCommand2() {
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = 'white';
+    document.querySelector('p').style.color = '#b3b3b3';
+    document.querySelector('a').style.color = '#4db8ff';
+    document.querySelector('h1').style.color = '#ffcc66';
+    alert("Dark Mode successful");
+}
+
+function showversion() {
+    alert(version);
+}
+
 function menu() {
   let userInput;
   do {
@@ -37,31 +62,6 @@ function processCommand(command) {
     default:
       alert("Invalid command. Type 'help' for a list of commands.");
   }
-}
-
-function showHelp() {
-  let helpMessage = "Available Commands:\n";
-  for (const key in secretMenu) {
-    helpMessage += `${key}: ${secretMenu[key]}\n`;
-  }
-  alert(helpMessage);
-}
-
-function performSecretCommand1() {
-  alert("Executing secret command 1...");
-}
-
-function secretCommand2() {
-    document.body.style.backgroundColor = 'black';
-    document.body.style.color = 'white';
-    document.querySelector('p').style.color = '#b3b3b3';
-    document.querySelector('a').style.color = '#4db8ff';
-    document.querySelector('h1').style.color = '#ffcc66';
-    alert("Dark Mode successful");
-}
-
-function showversion() {
-    alert(version);
 }
 
 window.addEventListener("keyup", event => {
