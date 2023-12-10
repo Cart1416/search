@@ -32,6 +32,7 @@ function secretCommand2() {
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
     alert("Dark Mode successful");
+    userInput = null;
 }
 
 function showversion() {
