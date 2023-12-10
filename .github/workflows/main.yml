@@ -1,0 +1,10 @@
+            - name: Build and Deploy app to GitHub Pages
+  # You may pin to the exact commit or the version.
+  # uses: lucetre/build-deploy-gh-pages@35469c52a7b1daabb32691c2a4c0c30178841d7c
+  uses: lucetre/build-deploy-gh-pages@v1.0
+  with:
+    # GitHub token
+    GH_TOKEN: 
+    # Relative path of your App to be built
+    BUILD_PATH: # default is .
+          
