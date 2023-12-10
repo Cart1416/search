@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 5";
+var version = "alpha 6";
 
 const secretMenu = {
 help: "Show all commands",
@@ -8,6 +8,7 @@ darkmode: "Enable Dark mode for this page",
 version: "Show the menu version",
 runcode: "Run some javascript code",
 cartgames: "Open Cart's Games",
+editmode: "Make text on this page editable",
 // Add more secret commands as needed
 };
 
@@ -44,6 +45,14 @@ function runcartgames() {
     window.open("https://cg.pythonanywhere.com/")
 }
 
+function runeditmode() {
+  if(document.body.contentEditable !== 'true') {
+      document.body.contentEditable = 'true'; document.designMode='on'; void 0
+  } else {
+      document.body.contentEditable = 'false'; document.designMode='off'; void 0
+  }
+}
+
 function menu() {
   let userInput;
   do {
@@ -73,6 +82,9 @@ function processCommand(command) {
       break;
     case "cartgames":
       runcartgames();
+      break;
+    case "editmode":
+      runeditmode();
       break;
     // Add more cases for additional commands
     default:
