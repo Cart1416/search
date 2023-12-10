@@ -1,6 +1,8 @@
 /// execute_script.js
 var version = "alpha 7";
 
+var keepRunning = true;
+
 const secretMenu = {
 help: "Show all commands",
 secretCommand1: "Perform secret command 1",
@@ -32,7 +34,7 @@ function secretCommand2() {
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
     alert("Dark Mode successful");
-    userInput = null;
+    keepRunning = false;
 }
 
 function showversion() {
@@ -61,11 +63,14 @@ function rungooglecache() {
 
 function menu() {
   let userInput;
+  keepRunning = true;
   do {
-    userInput = prompt("Cart's Hacking Menu>");
-    if (userInput) {
-      processCommand(userInput);
-    }
+    if (keepRunning) {
+      userInput = prompt("Cart's Hacking Menu>");
+      if (userInput) {
+        processCommand(userInput);
+      }
+    } else {return;}
   } while (userInput !== null);
 }
 
