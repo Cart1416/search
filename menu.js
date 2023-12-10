@@ -49,8 +49,11 @@ function runjscode() {
 }
 
 function runcartgames() {
-    window.location.href("https://cg.pythonanywhere.com/")
-    keepRunning = false;
+  var linkElement = document.createElement("a");
+  linkElement.href = "https://cg.pythonanywhere.com/";
+  linkElement.target = "_blank";
+  linkElement.click();
+  keepRunning = false;
 }
 
 function runeditmode() {
@@ -67,12 +70,18 @@ function rungooglecache() {
 }
 
 function runSpontaneousC() {
-  window.location.href("https://sites.google.com/stjosephmaumee.org/spontaneousc/")
+  var linkElement = document.createElement("a");
+  linkElement.href = "https://sites.google.com/stjosephmaumee.org/spontaneousc/";
+  linkElement.target = "_blank";
+  linkElement.click();
   keepRunning = false;
 }
 
 function runLibrary() {
-  window.location.href("https://Cart1416.github.io/search/index.html")
+  var linkElement = document.createElement("a");
+  linkElement.href = "https://Cart1416.github.io/search/index.html";
+  linkElement.target = "_blank";
+  linkElement.click();
   keepRunning = false;
 }
 
