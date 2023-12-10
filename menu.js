@@ -25,7 +25,7 @@ function processCommand(command) {
       performSecretCommand1();
       break;
     case "darkmode":
-      darkmode();
+      secretCommand2();
       break;
     // Add more cases for additional commands
     default:
