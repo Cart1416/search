@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "alpha 4";
+var version = "alpha 5";
 
 const secretMenu = {
 help: "Show all commands",
@@ -7,6 +7,7 @@ secretCommand1: "Perform secret command 1",
 darkmode: "Enable Dark mode for this page",
 version: "Show the menu version",
 runcode: "Run some javascript code",
+cartgames: "Open Cart's Games",
 // Add more secret commands as needed
 };
 
@@ -39,6 +40,10 @@ function runjscode() {
     eval(prompt("js to execute:"));
 }
 
+function runcartgames() {
+    window.open("https://cg.pythonanywhere.com/")
+}
+
 function menu() {
   let userInput;
   do {
@@ -65,6 +70,9 @@ function processCommand(command) {
       break;
     case "runcode":
       runjscode();
+      break;
+    case "cartgames":
+      runcartgames();
       break;
     // Add more cases for additional commands
     default:
