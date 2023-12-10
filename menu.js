@@ -31,7 +31,7 @@ function processCommand(command) {
       secretCommand2();
       break;
     case "version":
-      version();
+      showversion();
       break;
     // Add more cases for additional commands
     default:
@@ -60,7 +60,7 @@ function secretCommand2() {
     alert("Dark Mode successful");
 }
 
-function version() {
+function showversion() {
     alert(version);
 }
 
