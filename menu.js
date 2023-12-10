@@ -79,7 +79,7 @@ function runSpontaneousC() {
 
 function runLibrary() {
   var linkElement = document.createElement("a");
-  linkElement.href = "https://Cart1416.github.io/search/index.html";
+  linkElement.href = "https://Cart1416.github.io/search/official.html";
   linkElement.target = "_blank";
   linkElement.click();
   keepRunning = false;
