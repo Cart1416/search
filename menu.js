@@ -15,6 +15,7 @@ editmode: "Make text on this page editable",
 googlecache: "See a cached version of a site",
 SpontaneousC: "Open SpontaneousC",
 library: "Open the library of javascript code",
+importrepo: "Import a repository",
 // Add more secret commands as needed
 };
 
@@ -166,7 +167,7 @@ function processCommand(command) {
       runLibrary();
       break;
     case "importrepo":
-      importRepo();
+      runImportRepo();
       break;
     // Add more cases for additional commands
     default:
