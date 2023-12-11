@@ -1,7 +1,8 @@
 /// execute_script.js
-var version = "alpha 10";
+var version = "alpha 11";
 
 var keepRunning = true;
+var modScripts = {};
 
 const secretMenu = {
 help: "Show all commands",
@@ -85,6 +86,40 @@ function runLibrary() {
   keepRunning = false;
 }
 
+function runImportRepo() {
+  var repoLink = prompt("Enter the link to the repository txt file:");
+  if (!repoLink) {
+      alert("Invalid repository link.");
+      return;
+  }
+
+  fetch(repoLink)
+      .then(response => response.text())
+      .then(data => {
+          const modLines = data.split('\n');
+          for (const modLine of modLines) {
+              const [modName, modScriptLink] = modLine.split(': ');
+              modScripts[modName] = modScriptLink;
+          }
+
+          const modNames = Object.keys(modScripts);
+          const selectedMod = prompt("Choose a mod to run:\n" + modNames.join('\n'));
+
+          if (modScripts[selectedMod]) {
+              const scriptElement = document.createElement("script");
+              scriptElement.src = modScripts[selectedMod];
+              document.body.appendChild(scriptElement);
+              alert(`Mod '${selectedMod}' has been loaded.`);
+          } else {
+              alert("Invalid mod selection.");
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching repository:', error);
+          alert("Error fetching repository. Check the link and try again.");
+      });
+}
+
 function menu() {
   let userInput;
   keepRunning = true;
@@ -129,6 +164,9 @@ function processCommand(command) {
       break;
     case "library":
       runLibrary();
+      break;
+    case "importrepo":
+      importRepo();
       break;
     // Add more cases for additional commands
     default:
