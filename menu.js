@@ -1,8 +1,9 @@
 /// execute_script.js
-var version = "alpha 12";
+var version = "BETA 1.1";
 
 var keepRunning = true;
 var modScripts = {};
+var repoList = {};
 
 const secretMenu = {
 help: "Show all commands",
@@ -17,6 +18,7 @@ googlecache: "See a cached version of a site",
 SpontaneousC: "Open SpontaneousC",
 library: "Open the library of javascript code",
 importrepo: "Import a repository",
+reoplist: "Import an official repository easily",
 // Add more secret commands as needed
 };
 
@@ -123,6 +125,59 @@ function runImportRepo() {
       });
 }
 
+function autoImportRepo(repoLink) {
+  fetch(repoLink)
+      .then(response => response.text())
+      .then(data => {
+          const modLines = data.split('\n');
+          for (const modLine of modLines) {
+              const [modName, modScriptLink] = modLine.split(': ');
+              modScripts[modName] = modScriptLink;
+          }
+
+          const modNames = Object.keys(modScripts);
+          const selectedMod = prompt("Choose a mod to run:\n" + modNames.join('\n'));
+
+          if (modScripts[selectedMod]) {
+              const scriptElement = document.createElement("script");
+              scriptElement.src = modScripts[selectedMod];
+              document.body.appendChild(scriptElement);
+              alert(`Mod '${selectedMod}' from the selected repo has been loaded.`);
+          } else {
+              alert("Invalid mod selection.");
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching repository:', error);
+          alert("Error fetching repository. Check the link and try again.");
+      });
+}
+
+function runRepoList() {
+  fetch("https://Cart1416.github.io/search/repolist.txt")
+      .then(response => response.text())
+      .then(data => {
+          const repoLines = data.split('\n');
+          for (const repoLine of repoLines) {
+              const [repoName, repoLink] = repoLine.split(': ');
+              repoList[repoName] = repoLink;
+          }
+
+          const repoNames = Object.keys(repoList);
+          const selectedRepo = prompt("Choose a repository to import mods from:\n" + repoNames.join('\n'));
+
+          if (repoList[selectedRepo]) {
+              autoImportRepo(repoList[selectedRepo]);
+          } else {
+              alert("Invalid repository selection.");
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching repolist:', error);
+          alert("Error fetching repolist. Check the link and try again.");
+      });
+}
+
 function menu() {
   let userInput;
   keepRunning = true;
@@ -173,6 +228,9 @@ function processCommand(command) {
       break;
     case "exit":
       keepRunning = false;
+      break;
+    case "repolist":
+      runRepoList();
       break;
     // Add more cases for additional commands
     default:
