@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V4";
+var version = "Beta 1.2 V5";
 
 var keepRunning = true;
 var modScripts = {};
@@ -248,10 +248,9 @@ window.addEventListener("keyup", event => {
 
 function changeNewTab(originalUrl, newUrl) {
   var currentURL = window.location.href;
-  var targetURL = originalUrl;
-  if (currentURL === targetURL) {
-    window.location.replace(newUrl);
+  if (currentURL.startsWith(originalUrl)) {
+    window.location.href = newUrl;
   }
 }
 
-changeNewTab('chrome://newtab', 'https://google.com/');
+changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
