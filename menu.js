@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "BETA 1.1 V2";
+var version = "BETA 1.1 V3";
 
 var keepRunning = true;
 var modScripts = {};
@@ -231,6 +231,7 @@ function processCommand(command) {
       keepRunning = false;
       break;
     case "repolist":
+      keepRunning = false;
       runRepoList();
       break;
     // Add more cases for additional commands
