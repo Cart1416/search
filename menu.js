@@ -1,11 +1,12 @@
 /// execute_script.js
-var version = "alpha 11";
+var version = "alpha 12";
 
 var keepRunning = true;
 var modScripts = {};
 
 const secretMenu = {
 help: "Show all commands",
+exit: "Exit the menu, you can also use cancel of esc",
 secretCommand1: "Perform secret command 1",
 darkmode: "Enable Dark mode for this page",
 version: "Show the menu version",
@@ -169,6 +170,9 @@ function processCommand(command) {
       break;
     case "importrepo":
       runImportRepo();
+      break;
+    case "exit":
+      keepRunning = false;
       break;
     // Add more cases for additional commands
     default:
