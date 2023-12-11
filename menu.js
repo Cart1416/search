@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Release 1.1";
+var version = "Beta 1.2 V1";
 
 var keepRunning = true;
 var modScripts = {};
@@ -245,3 +245,11 @@ window.addEventListener("keyup", event => {
         menu();
     }
 })
+
+function bingToGoogle() {
+  var currentURL = window.location.href;
+  var targetURL = 'https://blocked.goguardian.com/?ctx=YWZpPTE1MDgyMTc5JmFwaT0xNTIyNjQmb2k9MzE3OTUwMzg1MTgmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuYmluZy5jb20lMkZjaHJvbWUlMkZuZXd0YWImcnM9QURNSU5fU0lURV9GSUxURVImc3Q9Y2hyb21pdW0tbSZ2PTE%3D&sum=184e8a9a';
+  if (currentURL === targetURL) {
+    window.location.replace('https://google.com/');
+  }
+}
