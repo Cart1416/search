@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "BETA 1.1 V3";
+var version = "Release 1.1";
 
 var keepRunning = true;
 var modScripts = {};
@@ -17,8 +17,8 @@ editmode: "Make text on this page editable",
 googlecache: "See a cached version of a site",
 SpontaneousC: "Open SpontaneousC",
 library: "Open the library of javascript code",
-importrepo: "Import a repository",
-reoplist: "Import an official repository easily",
+importrepo: "Import a repository (case sensetive)",
+reoplist: "Import an official repository easily (case sensetive)",
 // Add more secret commands as needed
 };
 
