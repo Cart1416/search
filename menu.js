@@ -88,6 +88,7 @@ function runLibrary() {
 }
 
 function runImportRepo() {
+  keepRunning = false;
   var repoLink = prompt("Enter the link to the repository txt file:");
   if (!repoLink) {
       alert("Invalid repository link.");
