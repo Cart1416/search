@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "BETA 1.1";
+var version = "BETA 1.1 V2";
 
 var keepRunning = true;
 var modScripts = {};
@@ -154,6 +154,7 @@ function autoImportRepo(repoLink) {
 }
 
 function runRepoList() {
+  keepRunning = false;
   fetch("https://Cart1416.github.io/search/repolist.txt")
       .then(response => response.text())
       .then(data => {
