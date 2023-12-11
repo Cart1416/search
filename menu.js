@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V1";
+var version = "Beta 1.2 V3";
 
 var keepRunning = true;
 var modScripts = {};
@@ -246,10 +246,12 @@ window.addEventListener("keyup", event => {
     }
 })
 
-function bingToGoogle() {
+function changeNewTab(originalUrl, newUrl) {
   var currentURL = window.location.href;
-  var targetURL = 'https://blocked.goguardian.com/?ctx=YWZpPTE1MDgyMTc5JmFwaT0xNTIyNjQmb2k9MzE3OTUwMzg1MTgmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuYmluZy5jb20lMkZjaHJvbWUlMkZuZXd0YWImcnM9QURNSU5fU0lURV9GSUxURVImc3Q9Y2hyb21pdW0tbSZ2PTE%3D&sum=184e8a9a';
+  var targetURL = originalUrl;
   if (currentURL === targetURL) {
-    window.location.replace('https://google.com/');
+    window.location.replace(newUrl);
   }
 }
+
+changeNewTab('https://blocked.goguardian.com/?ctx=YWZpPTE1MDgyMTc5JmFwaT0xNTIyNjQmb2k9MzE3OTUwMzg1MTgmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuYmluZy5jb20lMkZjaHJvbWUlMkZuZXd0YWImcnM9QURNSU5fU0lURV9GSUxURVImc3Q9Y2hyb21pdW0tbSZ2PTE%3D&sum=184e8a9a', 'https://google.com/');
