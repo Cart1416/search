@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V6";
+var version = "Beta 1.2 V7";
 
 var keepRunning = true;
 var modScripts = {};
@@ -240,12 +240,6 @@ function processCommand(command) {
   }
 }
 
-window.addEventListener("keyup", event => {
-    if (event.ctrlKey && event.which === 192) {
-        menu();
-    }
-})
-
 function changeNewTab(originalUrl, newUrl) {
   var currentURL = window.location.href;
   if (currentURL.startsWith(originalUrl)) {
@@ -257,3 +251,9 @@ function runChangeNewTab() {
   changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
 }
 setInterval(runChangeNewTab, 1000);
+
+window.addEventListener("keyup", event => {
+    if (event.ctrlKey && event.which === 192) {
+        menu();
+    }
+})
