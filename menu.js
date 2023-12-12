@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V7";
+var version = "Beta 1.2 V8";
 
 var keepRunning = true;
 var modScripts = {};
@@ -247,10 +247,7 @@ function changeNewTab(originalUrl, newUrl) {
   }
 }
 
-function runChangeNewTab() {
-  changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
-}
-setInterval(runChangeNewTab, 1000);
+changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
 
 window.addEventListener("keyup", event => {
     if (event.ctrlKey && event.which === 192) {
