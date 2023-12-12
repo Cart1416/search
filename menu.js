@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V5";
+var version = "Beta 1.2 V6";
 
 var keepRunning = true;
 var modScripts = {};
@@ -253,4 +253,7 @@ function changeNewTab(originalUrl, newUrl) {
   }
 }
 
-changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
+function runChangeNewTab() {
+  changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
+}
+setInterval(runChangeNewTab, 1000);
