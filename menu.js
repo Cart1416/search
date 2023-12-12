@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V9";
+var version = "Release 1.1";
 
 var keepRunning = true;
 var modScripts = {};
@@ -245,12 +245,3 @@ window.addEventListener("keyup", event => {
         menu();
     }
 })
-
-function changeNewTab(originalUrl, newUrl) {
-  var currentURL = window.location.href;
-  if (currentURL.startsWith(originalUrl)) {
-    window.location.href = newUrl;
-  }
-}
-
-changeNewTab('https://blocked.goguardian.com/', 'https://google.com/');
