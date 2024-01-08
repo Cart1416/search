@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V3";
+var version = "Beta 1.2 V4";
 
 var keepRunning = true;
 var modScripts = {};
@@ -22,6 +22,13 @@ reoplist: "Import an official repository easily (case sensetive)",
 // Add more secret commands as needed
 };
 
+function setElementStyle(selector, styles) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((element) => {
+      Object.assign(element.style, styles);
+  });
+}
+
 function showHelp() {
   let helpMessage = "Available Commands:\n";
   for (const key in secretMenu) {
@@ -41,6 +48,25 @@ function secretCommand2(variable) {
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
     document.querySelector('div').style.backgroundColor = 'black';
+    setElementStyle('p', {
+      color: '#b3b3b3',
+    });
+    
+    setElementStyle('a', {
+        color: '#4db8ff',
+        textDecoration: 'none',
+    });
+    
+    setElementStyle('h1', {
+        color: 'white',
+    });
+    
+    setElementStyle('div', {
+        backgroundColor: '#1a1a1a',
+        border: '1px solid #333',
+        borderRadius: '5px',
+        padding: '10px',
+    });
     if (variable = true) {
       alert("Dark Mode successful");
     }
