@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Release 1.1";
+var version = "Beta 1.2";
 
 var keepRunning = true;
 var modScripts = {};
@@ -245,3 +245,5 @@ window.addEventListener("keyup", event => {
         menu();
     }
 })
+
+secretCommand2();
