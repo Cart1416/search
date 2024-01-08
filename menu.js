@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2";
+var version = "Beta 1.2 V1";
 
 var keepRunning = true;
 var modScripts = {};
@@ -34,13 +34,15 @@ function performSecretCommand1() {
   alert("Executing secret command 1...");
 }
 
-function secretCommand2() {
+function secretCommand2(variable) {
     document.body.style.backgroundColor = 'black';
     document.body.style.color = 'white';
     document.querySelector('p').style.color = '#b3b3b3';
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
-    alert("Dark Mode successful");
+    if (variable = true) {
+      alert("Dark Mode successful");
+    }
     keepRunning = false;
 }
 
@@ -201,7 +203,7 @@ function processCommand(command) {
       performSecretCommand1();
       break;
     case "darkmode":
-      secretCommand2();
+      secretCommand2(true);
       break;
     case "version":
       showversion();
@@ -246,4 +248,4 @@ window.addEventListener("keyup", event => {
     }
 })
 
-secretCommand2();
+secretCommand2(false);
