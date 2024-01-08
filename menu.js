@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V2";
+var version = "Beta 1.2 V3";
 
 var keepRunning = true;
 var modScripts = {};
@@ -249,4 +249,9 @@ window.addEventListener("keyup", event => {
     }
 })
 
-secretCommand2(false);
+document.body.style.backgroundColor = 'black';
+document.body.style.color = 'white';
+document.querySelector('p').style.color = '#b3b3b3';
+document.querySelector('a').style.color = '#4db8ff';
+document.querySelector('h1').style.color = '#ffcc66';
+document.querySelector('div').style.backgroundColor = 'black';
