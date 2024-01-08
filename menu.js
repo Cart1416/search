@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V4";
+var version = "Beta 1.2 V5";
 
 var keepRunning = true;
 var modScripts = {};
@@ -48,8 +48,8 @@ function secretCommand2(variable) {
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
     document.querySelector('div').style.backgroundColor = 'black';
-    setElementStyle('p', {
-      color: '#b3b3b3',
+    setElementStyle('p, span, li, td, th, label', {
+        color: '#b3b3b3',
     });
     
     setElementStyle('a', {
@@ -57,15 +57,24 @@ function secretCommand2(variable) {
         textDecoration: 'none',
     });
     
-    setElementStyle('h1', {
+    setElementStyle('h1, h2, h3, h4, h5, h6', {
         color: 'white',
     });
     
-    setElementStyle('div', {
+    setElementStyle('div, article, section, main, aside, nav', {
         backgroundColor: '#1a1a1a',
         border: '1px solid #333',
         borderRadius: '5px',
         padding: '10px',
+    });
+    
+    setElementStyle('button, input[type="button"], input[type="submit"]', {
+        backgroundColor: '#4db8ff',
+        color: 'white',
+        padding: '8px 12px',
+        border: 'none',
+        borderRadius: '3px',
+        cursor: 'pointer',
     });
     if (variable = true) {
       alert("Dark Mode successful");
