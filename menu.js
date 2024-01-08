@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V5";
+var version = "Release 1.2";
 
 var keepRunning = true;
 var modScripts = {};
@@ -46,7 +46,7 @@ function secretCommand2(variable) {
     document.body.style.color = 'white';
     document.querySelector('p').style.color = '#b3b3b3';
     document.querySelector('a').style.color = '#4db8ff';
-    document.querySelector('h1').style.color = '#ffcc66';
+    document.querySelector('h1').style.color = 'white';
     document.querySelector('div').style.backgroundColor = 'black';
     setElementStyle('p, span, li, td, th, label', {
         color: '#b3b3b3',
