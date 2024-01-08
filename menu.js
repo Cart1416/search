@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.2 V1";
+var version = "Beta 1.2 V2";
 
 var keepRunning = true;
 var modScripts = {};
@@ -40,6 +40,7 @@ function secretCommand2(variable) {
     document.querySelector('p').style.color = '#b3b3b3';
     document.querySelector('a').style.color = '#4db8ff';
     document.querySelector('h1').style.color = '#ffcc66';
+    document.querySelector('div').style.backgroundColor = 'black';
     if (variable = true) {
       alert("Dark Mode successful");
     }
