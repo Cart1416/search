@@ -1,19 +1,35 @@
-/**
- * Add save/restore buttons to Infinite Craft
- * Works by saving the elements that you have created into localStorage
- * 
- * Remember to hit `Save` before closing your tab, Happy Crafting!
- */
-
 const saveElements = () => {
-    localStorage.setItem('saved-elements', JSON.stringify(window.$nuxt.$children[2].$children[0].$children[0].$data.elements));
+    const elements = window.$nuxt.$children[2].$children[0].$children[0].$data.elements;
+    const json = JSON.stringify(elements);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'saved-elements.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
   
   const restoreElements = () => {
-    const storedElements = JSON.parse(localStorage.getItem('saved-elements'));
-    if (storedElements?.length > 4) {
-      window.$nuxt.$children[2].$children[0].$children[0].$data.elements = storedElements;
-    }
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const json = event.target.result;
+        const elements = JSON.parse(json);
+        if (elements?.length > 4) {
+          window.$nuxt.$children[2].$children[0].$children[0].$data.elements = elements;
+        }
+      };
+      reader.readAsText(file);
+    });
+    input.click();
   }
   
   const buttonStyle = {
@@ -59,3 +75,4 @@ const saveElements = () => {
   }
   
   init();
+  
