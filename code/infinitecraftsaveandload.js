@@ -25,6 +25,10 @@ const saveElements = () => {
         const elements = JSON.parse(json);
         if (elements?.length > 4) {
           window.$nuxt.$children[2].$children[0].$children[0].$data.elements = elements;
+          const existingData = localStorage.getItem('infinite-craft-data');
+          const parsedData = existingData ? JSON.parse(existingData) : { elements: [] };
+          parsedData.elements = elements; // Update the elements with the restored data
+          localStorage.setItem('infinite-craft-data', JSON.stringify(parsedData));
         }
       };
       reader.readAsText(file);
