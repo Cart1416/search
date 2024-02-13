@@ -13,28 +13,30 @@ const saveElements = () => {
     URL.revokeObjectURL(url);
   }
   
-  const restoreElements = () => {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'application/json';
-    input.addEventListener('change', () => {
-      const file = input.files[0];
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const json = event.target.result;
-        const elements = JSON.parse(json);
-        if (elements?.length > 4) {
-          window.$nuxt.$children[2].$children[0].$children[0].$data.elements = elements;
-          const existingData = localStorage.getItem('infinite-craft-data');
-          const parsedData = existingData ? JSON.parse(existingData) : { elements: [] };
-          parsedData.elements = elements; // Update the elements with the restored data
-          localStorage.setItem('infinite-craft-data', JSON.stringify(parsedData));
-        }
-      };
-      reader.readAsText(file);
-    });
-    input.click();
-  }
+const restoreElements = () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const json = event.target.result;
+      console.log("Read JSON:", json); // Add this log to check the read JSON
+      const elements = JSON.parse(json);
+      console.log("Parsed elements:", elements); // Add this log to check parsed elements
+        window.$nuxt.$children[2].$children[0].$children[0].$data.elements = elements;
+        const existingData = localStorage.getItem('infinite-craft-data');
+        const parsedData = existingData ? JSON.parse(existingData) : { elements: [] };
+        parsedData.elements = elements; // Update the elements with the restored data
+        console.log(JSON.stringify(parsedData));
+        localStorage.setItem('infinite-craft-data', JSON.stringify(parsedData));
+    };
+    reader.readAsText(file);
+  });
+  input.click();
+}
+
   
   const buttonStyle = {
     appearance: 'none',
