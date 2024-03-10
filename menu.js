@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.3 3";
+var version = "Release 1.3";
 
 var keepRunning = true;
 var modScripts = {};
