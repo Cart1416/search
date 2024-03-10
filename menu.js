@@ -283,6 +283,10 @@ function processCommand(command) {
       keepRunning = false;
       runRepoList();
       break;
+    case "devtools":
+      keepRunning = false;
+      runDevTools();
+      break;
     // Add more cases for additional commands
     default:
       alert("Invalid command. Type 'help' for a list of commands.");
