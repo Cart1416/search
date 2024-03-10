@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.3 2";
+var version = "Beta 1.3 3";
 
 var keepRunning = true;
 var modScripts = {};
@@ -227,14 +227,15 @@ function runDevTools() {
   script2.textContent = "eruda.init();";
   document.body.appendChild(script2);
 
-
-  var script1 = document.createElement('script');
-  script1.src = "https://cdn.jsdelivr.net/npm/eruda";
-  document.body.appendChild(script1);
-  
-  var script2 = document.createElement('script');
-  script2.textContent = "eruda.init();";
-  document.body.appendChild(script2);
+  setTimeout(() => {
+    var script1 = document.createElement('script');
+    script1.src = "https://cdn.jsdelivr.net/npm/eruda";
+    document.body.appendChild(script1);
+    
+    var script2 = document.createElement('script');
+    script2.textContent = "eruda.init();";
+    document.body.appendChild(script2);
+  }, 500);
 }
 
 function menu() {
