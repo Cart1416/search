@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Release 1.2";
+var version = "Beta 1.3";
 
 var keepRunning = true;
 var modScripts = {};
@@ -19,6 +19,7 @@ SpontaneousC: "Open SpontaneousC",
 library: "Open the library of javascript code",
 importrepo: "Import a repository (case sensetive)",
 reoplist: "Import an official repository easily (case sensetive)",
+devtools: "Add Eruda Developer Tools",
 // Add more secret commands as needed
 };
 
@@ -215,6 +216,16 @@ function runRepoList() {
           console.error('Error fetching repolist:', error);
           alert("Error fetching repolist. Check the link and try again.");
       });
+}
+
+function runDevTools() {
+  var script1 = document.createElement('script');
+  script1.src = "https://cdn.jsdelivr.net/npm/eruda";
+  document.body.appendChild(script1);
+  
+  var script2 = document.createElement('script');
+  script2.textContent = "eruda.init();";
+  document.body.appendChild(script2);
 }
 
 function menu() {
