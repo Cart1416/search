@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Beta 1.4 3";
+var version = "Beta 1.4 4";
 
 var keepRunning = true;
 var modScripts = {};
@@ -309,11 +309,7 @@ window.addEventListener("keyup", event => {
     }
 });
 
-function noGuardian() {
   if (window.location.hostname == blocked.goguardian.com) {
 alert(" nu uh goguardian is mad!");
       window.location.href = "https://ahf2139.pythonanywhere.com/1234.html";
   }
-}
-
-noGuardian();
