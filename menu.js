@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Release 1.4";
+var version = "Release 1.4 2";
 
 var keepRunning = true;
 var modScripts = {};
@@ -303,11 +303,17 @@ function processCommand(command) {
   }
 }
 
+window.addEventListener("keyup", event => {
+    if (event.ctrlKey && event.which === 192) {
+        menu();
+    }
+});
+
 function noGuardian() {
   let titleText = "OH YEAH!!!"
   let descText = "This webpage has been blocked with direction AND magnitude!"
-  let linkText = chrome.runtime.getURL("vector2.png");
-  // let linkText = "https://i.imgflip.com/3j9iwc.jpg";
+  //let linkText = chrome.runtime.getURL("vector2.png");
+  let linkText = "https://i.imgflip.com/3j9iwc.jpg";
   
   //
   let lla = $('h1:contains("Restricted")').html().replace("Restricted", titleText);
@@ -323,10 +329,3 @@ function noGuardian() {
 }
 
 noGuardian();
-
-window.addEventListener("keyup", event => {
-    if (event.ctrlKey && event.which === 192) {
-        menu();
-    }
-});
-
