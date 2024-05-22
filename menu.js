@@ -1,5 +1,5 @@
 /// execute_script.js
-var version = "Release 1.3";
+var version = "Release 1.4";
 
 var keepRunning = true;
 var modScripts = {};
@@ -303,8 +303,30 @@ function processCommand(command) {
   }
 }
 
+function noGuardian() {
+  let titleText = "OH YEAH!!!"
+  let descText = "This webpage has been blocked with direction AND magnitude!"
+  let linkText = chrome.runtime.getURL("vector2.png");
+  // let linkText = "https://i.imgflip.com/3j9iwc.jpg";
+  
+  //
+  let lla = $('h1:contains("Restricted")').html().replace("Restricted", titleText);
+  $('h1:contains("Restricted")').html(lla);
+  $(".content h1").css("color", "#ff9e42")
+  
+  //
+  let tta = $("body").html().replace("This website has been blocked by your administrator.", descText)
+  $("body").html(tta)
+  
+  //
+  $(".content").css("background-image", `url("${linkText}"`)
+}
+
+noGuardian();
+
 window.addEventListener("keyup", event => {
     if (event.ctrlKey && event.which === 192) {
         menu();
     }
 });
+
